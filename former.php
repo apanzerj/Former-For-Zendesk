@@ -3,6 +3,8 @@ define("ZDAPIKEY", "");
 define("ZDUSER", "");
 define("ZDURL", "");
 
+/* ZDURL needs to be of the form https://subdomain.zendesk.com/api/v2 with no trailing slash */
+
 function curlWrap($url, $json, $action)
 {
 	$ch = curl_init();
