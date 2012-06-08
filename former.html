@@ -15,6 +15,7 @@
 #box_form > p > input, #box_form > p > textarea{
         width:300px;
 }
+
 #click2 {
      position: fixed;
      right: 0;
@@ -48,9 +49,6 @@ $(document).ready(function() {
             text: "Cancel",
             click: function() {
                 $(this).dialog("close");
-                $('#click2').animate({
-                	width: '-=7'
-                });
             }},
         {
             text: "Submit",
@@ -59,6 +57,7 @@ $(document).ready(function() {
             }}
         ]
     });
+    var animate_now = false;
     $('#page1').dialog({
         autoOpen: false,
         height: 375,
@@ -70,11 +69,8 @@ $(document).ready(function() {
             text: "Cancel",
             click: function() {
                 $(this).dialog("close");
-                $('#click2').animate({
-                	width: '-=7'
-                });
             }},
-        {
+        	{
             text: "Create Ticket",
             click: function() {
                 $('#page1').dialog('close');
@@ -83,9 +79,6 @@ $(document).ready(function() {
         ]
     });
     $('#click2').click(function(e) {
-   	    $("#click2").animate({
-	        width: '+=10'
-	        });
         $('#page1').dialog('open');
     });
 });
