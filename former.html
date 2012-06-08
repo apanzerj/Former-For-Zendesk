@@ -48,6 +48,9 @@ $(document).ready(function() {
             text: "Cancel",
             click: function() {
                 $(this).dialog("close");
+                $('#click2').animate({
+                	width: '-=7'
+                });
             }},
         {
             text: "Submit",
@@ -67,6 +70,9 @@ $(document).ready(function() {
             text: "Cancel",
             click: function() {
                 $(this).dialog("close");
+                $('#click2').animate({
+                	width: '-=7'
+                });
             }},
         {
             text: "Create Ticket",
@@ -77,6 +83,9 @@ $(document).ready(function() {
         ]
     });
     $('#click2').click(function(e) {
+   	    $("#click2").animate({
+	        width: '+=10'
+	        });
         $('#page1').dialog('open');
     });
 });
