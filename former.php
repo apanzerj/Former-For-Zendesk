@@ -1,30 +1,19 @@
 <?php
-define("ZDAPIKEY", "");
-define("ZDUSER", "");
-define("ZDURL", "");
+define("ZDAPIKEY", "YOURAPIKEY");
+define("ZDUSER", "YOURUSERNAME");
+define("ZDURL", "https://SUBDOMAIN.zendesk.com/api/v2");
 
-/* ZDURL needs to be of the form https://subdomain.zendesk.com/api/v2 with no trailing slash */
-
-function curlWrap($url, $json, $action)
+function curlWrap($url, $json)
 {
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
 	curl_setopt($ch, CURLOPT_MAXREDIRS, 10 );
 	curl_setopt($ch, CURLOPT_URL, ZDURL.$url);
 	curl_setopt($ch, CURLOPT_USERPWD, ZDUSER."/token:".ZDAPIKEY);
-	switch($action){
-		case "POST":
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-			break;
-		case "GET":
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-			break;
-		default:
-			break;
-	}
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json'));
 	curl_setopt($ch, CURLOPT_USERAGENT, "MozillaXYZ/1.0");
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 	$output = curl_exec($ch);
@@ -38,7 +27,5 @@ foreach($_POST as $key => $value){
 	}
 }
 $create = json_encode(array('ticket' => array('subject' => $arr['z_subject'], 'description' => $arr['z_description'], 'requester' => array('name' => $arr['z_name'], 'email' => $arr['z_requester']))), JSON_FORCE_OBJECT);
-$return = curlWrap("/tickets.json", $create, "POST");
+$return = curlWrap("/tickets.json", $create);
 ?>
-	
-	
