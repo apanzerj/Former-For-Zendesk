@@ -1,5 +1,49 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.20/themes/vader/jquery-ui.css">
+<style type="text/css">
+#box_form > *{
+    font-size:12px;
+    margin-bottom:15px;
+}
+#box_form > p > label{
+    display:block;
+    font-size:18px;
+}
+#box_form > p > input, #box_form > p > textarea{
+        width:300px;
+}
+</style>
+<script type='text/javascript'>
+$(document).ready(function() {
+    $('#box_form').dialog({
+        autoOpen: false,
+        height: 375,
+        width: 350,
+        modal: true,
+        buttons: [
+            {
+            text: "Cancel",
+            click: function() {
+                $(this).dialog("close");
+            }},
+        {
+            text: "Submit",
+            click: function() {
+                $('#zFormer').submit();
+            }}
+        ]
+    });
+    $('#clicky').button().click(function(e){
+        $('#box_form').dialog('open');
+    });
+});
+</script>
+</head>
+<body>
 <form id="zFormer" method="POST" action="former.php" name="former">
 <div id="box_form">
     <p>
@@ -18,9 +62,8 @@
         <label for="z_description">Description: </label>
         <textarea name="z_description">I have this pain in my knee.</textarea>
     </p>
-    <p>
-        <input type="submit" value="submit" id="submitter">
-    </p>
 </div>
 </form>
+<input type="button" id="clicky" value="Show Form">
+</body>
 </html>
