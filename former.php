@@ -1,9 +1,11 @@
 <?php
-define("ZDAPIKEY", "");
-define("ZDUSER", "");
-define("ZDURL", "");
+include("config.php");
 
-/* ZDURL needs to be of the form https://subdomain.zendesk.com/api/v2 with no trailing slash */
+/* Notes
+ * This script expects there to be a config.php file in the same directory as this file.
+ * There is an included config.example which you need to edit with your own values.
+ * Remember: ZDURL needs to be of the form https://subdomain.zendesk.com/api/v2 with no trailing slash
+ */
 
 function curlWrap($url, $json, $action)
 {
@@ -40,5 +42,3 @@ foreach($_POST as $key => $value){
 $create = json_encode(array('ticket' => array('subject' => $arr['z_subject'], 'description' => $arr['z_description'], 'requester' => array('name' => $arr['z_name'], 'email' => $arr['z_requester']))), JSON_FORCE_OBJECT);
 $return = curlWrap("/tickets.json", $create, "POST");
 ?>
-	
-	
