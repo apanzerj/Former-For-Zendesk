@@ -1,18 +1,19 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">	
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.20/themes/vader/jquery-ui.css">
-<style language="text/css">
-#box_form > *, #page1.ui-widget-content{
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.20/themes/vader/jquery-ui.css"></link>
+<style type="text/css">
+#box_form > #zFormer > *, #page1.ui-widget-content{
     font-size:12px;
     margin-bottom:15px;
 }
-#box_form > p > label{
+#box_form > #zFormer > p > label{
     font-size:18px;
 }
-#box_form > p > input, #box_form > p > textarea{
+#box_form > #zFormer > p > input, #box_form > #zFormer > p > textarea{
         width:300px;
 }
 
@@ -24,26 +25,25 @@
      width: 25px;
      height: 100px;
      text-indent: -10000px;
-     background-color:black;                 
+     background-color:black;
      background-image: url('https://dl.dropbox.com/u/17101960/Supportv2.png');
      overflow: hidden;
-	-webkit-border-top-left-radius: 7px;
-	-webkit-border-bottom-left-radius: 7px;
-	-moz-border-radius-topleft: 7px;
-	-moz-border-radius-bottomleft: 7px;
-	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
+    -webkit-border-top-left-radius: 7px;
+    -webkit-border-bottom-left-radius: 7px;
+    -moz-border-radius-topleft: 7px;
+    -moz-border-radius-bottomleft: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 </style>
 <script type="text/javascript">
-// Feedback Tab, Fork 2: Additional Page
 $(document).ready(function() {
     $('#box_form').dialog({
         autoOpen: false,
         height: 375,
         width: 350,
         modal: true,
-        title: "Create Ticket",
+        title: 'Create Ticket',
         buttons: [
             {
             text: "Cancel",
@@ -57,7 +57,6 @@ $(document).ready(function() {
             }}
         ]
     });
-    var animate_now = false;
     $('#page1').dialog({
         autoOpen: false,
         height: 375,
@@ -70,7 +69,7 @@ $(document).ready(function() {
             click: function() {
                 $(this).dialog("close");
             }},
-        	{
+        {
             text: "Create Ticket",
             click: function() {
                 $('#page1').dialog('close');
@@ -85,29 +84,29 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<form id="zFormer" method="POST" action="former.php" name="former">
 <div id="box_form">
+<form id="zFormer" method="post" action="http://www.hoobydo.com/foo/former.php" name="zFormer">
     <p>
         <label for="z_name">Your Name:</label>
-        <input type="text" value="Adam Panzer" name="z_name">
+        <input type="text" value="Adam Panzer" name="z_name" />
     </p>
     <p>
-        <label for="z_requestor">Your Email Address: </label>
-        <input type="text" value="apanzer@zendesk.com" name="z_requester">
+        <label for="z_requester">Your Email Address: </label>
+        <input type="text" value="apanzer@zendesk.com" name="z_requester" />
     </p>
     <p>
         <label for="z_subject">Subject: </label>
-        <input type="text" value="Who needs a subject?" name="z_subject">
+        <input type="text" value="Who needs a subject?" name="z_subject" />
     </p>
     <p>
-        <label for="z_description">Description: </label>
-        <textarea name="z_description">I have this pain in my knee.</textarea>
+        <label for="z_description">Description: 
+        <textarea name="z_description">I have this pain in my knee.</textarea></label>
     </p>
+    </form>
 </div>
-    <div id="page1">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem sem, dictum et facilisis quis, aliquam id nisi. Proin fermentum varius sapien, in varius leo pretium eu. Nunc pellentesque consequat libero id malesuada. Maecenas rhoncus, quam vel eleifend ultrices, lacus metus lacinia ipsum, a interdum turpis nunc ut odio. Suspendisse urna mauris, gravida non euismod nec, porta ut mi. Proin est est, tristique vitae gravida sed, vestibulum et purus. Sed pellentesque porttitor velit, et fermentum felis adipiscing sed. Nulla nisi nulla, condimentum a placerat et, posuere ac elit. Morbi in velit ut elit viverra facilisis quis in felis. Vivamus sed neque nulla, non dictum sapien. Proin hendrerit, ante eget vestibulum tincidunt, neque mi varius est, accumsan facilisis nulla ipsum sit amet sem. Quisque scelerisque fringilla tempor. Phasellus id dolor nec felis viverra dapibus sit amet et nisl. Etiam tincidunt, nibh sit amet fermentum hendrerit, nisl augue ultrices orci, et tincidunt ligula enim id felis.
-    </div>
-</form>
+<div id="page1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lorem sem, dictum et facilisis quis, aliquam id nisi. Proin fermentum varius sapien, in varius leo pretium eu. Nunc pellentesque consequat libero id malesuada. Maecenas rhoncus, quam vel eleifend ultrices, lacus metus lacinia ipsum, a interdum turpis nunc ut odio. Suspendisse urna mauris, gravida non euismod nec, porta ut mi. Proin est est, tristique vitae gravida sed, vestibulum et purus. Sed pellentesque porttitor velit, et fermentum felis adipiscing sed. Nulla nisi nulla, condimentum a placerat et, posuere ac elit. Morbi in velit ut elit viverra facilisis quis in felis. Vivamus sed neque nulla, non dictum sapien. Proin hendrerit, ante eget vestibulum tincidunt, neque mi varius est, accumsan facilisis nulla ipsum sit amet sem. Quisque scelerisque fringilla tempor. Phasellus id dolor nec felis viverra dapibus sit amet et nisl. Etiam tincidunt, nibh sit amet fermentum hendrerit, nisl augue ultrices orci, et tincidunt ligula enim id felis.
+</div>
 <a href="#" id="click2">Click Here</a>
 </body>
 </html>
