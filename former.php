@@ -43,10 +43,8 @@ if(CUSTOM){
 			$ticket['ticket']['fields'][]=$cfield;
 		}
 	}
-	$ticket = json_encode($ticket);
-}else{
-	$ticket = json_encode(array('ticket' => array('subject' => $arr['z_subject'], 'description' => $arr['z_description'], 'requester' => array('name' => $arr['z_name'], 'email' => $arr['z_requester']))));	
 }
+$ticket = json_encode($ticket);
 $return = curlWrap("/tickets.json", $ticket);
 print_r($ticket);
 ?>
