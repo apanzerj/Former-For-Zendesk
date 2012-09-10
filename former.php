@@ -9,6 +9,8 @@ include("config.php");
  *
  * Instructions: Much like before where you would create fields that had z_, in this setup,
  * for custom fields, you'll create text boxes that have c_ but are followed by the custom field ID number.
+ * In addition, note the changed config.example.php where we now have a new setting (Custom) which needs to be true
+ * in order to process custom fields. 
  *
  */
 
