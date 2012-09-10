@@ -7,7 +7,9 @@ include("config.php");
  * There is an included config.example which you need to edit with your own values.
  * Remember: ZDURL needs to be of the form https://subdomain.zendesk.com/api/v2 with no trailing slash
  *
- * Do not implement this yet. It has bugs!!! 
+ * Instructions: Much like before where you would create fields that had z_, in this setup,
+ * for custom fields, you'll create text boxes that have c_ but are followed by the custom field ID number.
+ *
  */
 
 function curlWrap($url, $json)
