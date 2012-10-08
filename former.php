@@ -37,7 +37,7 @@ foreach($_POST as $key => $value){
 		$arr[strip_tags($key)] = strip_tags($value);
 	}
 }
-$ticket = array('ticket' => array('subject' => $arr['z_subject'], 'description' => $arr['z_description'], 'requester' => array('name' => $arr['z_name'], 'email' => $arr['z_requester'])));
+$ticket = array('ticket' => array('subject' => $arr['z_subject'], 'comment' => array("value"=>$arr['z_description'] ), 'requester' => array('name' => $arr['z_name'], 'email' => $arr['z_requester'])));
 if(CUSTOM){
 	foreach($_POST as $key => $value){
 		if(preg_match('/^c_/i',$key)){
