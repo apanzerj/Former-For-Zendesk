@@ -32,6 +32,9 @@ function curlWrap($url, $json)
 	$decoded = json_decode($output);
 	return $decoded;
 }
+
+$arr = array();
+
 foreach($_POST as $key => $value){
 	if(preg_match('/^z_/i',$key)){
 		$arr[strip_tags($key)] = strip_tags($value);
@@ -44,7 +47,7 @@ if(CUSTOM){
 			$id = str_replace('c_', '', strip_tags($key));
 			$value = strip_tags($value);
 			$cfield=array('id'=>$id, 'value'=>$value);
-			$ticket['ticket']['fields'][]=$cfield;
+			$ticket['ticket']['custom_fields'][]=$cfield;
 		}
 	}
 }
