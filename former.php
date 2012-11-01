@@ -53,5 +53,4 @@ if(CUSTOM){
 }
 $ticket = json_encode($ticket);
 $return = curlWrap("/tickets.json", $ticket);
-print_r($ticket);
 ?>
