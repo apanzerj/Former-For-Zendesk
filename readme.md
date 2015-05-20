@@ -11,5 +11,5 @@ The prebuilt one is just that, prebuilt, and has zero flexibility outside the pa
 Move along...
 
 ##Documentation##
-You can read the Zendesk Article here: https://support.zendesk.com/entries/21562288-creating-a-custom-html-form-for-ticket-submission
+You can read the Zendesk Article here: https://support.zendesk.com/hc/en-us/articles/203660576-Creating-a-Custom-HTML-Form-for-Ticket-Submission
 
