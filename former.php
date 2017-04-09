@@ -52,5 +52,5 @@ if(CUSTOM){
 	}
 }
 $ticket = json_encode($ticket);
-$return = curlWrap("/tickets.json", $ticket);
+$return = curlWrap("/api/v2/tickets.json", $ticket);
 ?>
